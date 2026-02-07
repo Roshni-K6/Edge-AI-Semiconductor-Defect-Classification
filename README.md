@@ -17,9 +17,9 @@ Train / Validation / Test split: 70% / 15% / 15%
 
 **Innovation Highlights**
 
-Transfer learning reduces training time and improves accuracy with limited data
-Grayscale conversion optional to reduce compute and memory footprint
-Edge-ready ONNX model compatible with NXP eIQ and similar frameworks
+Transfer learning reduces training time and improves accuracy with limited data.
+Grayscale conversion optional to reduce compute and memory footprint.
+Edge-ready ONNX model compatible with NXP eIQ and similar frameworks.
 
 **Evaluation Metrics**
 
