@@ -1,0 +1,10 @@
+torch
+torchvision
+Pillow
+onnx
+onnxruntime
+onnxscript
+numpy
+scikit-learn
+matplotlib
+seaborn
