@@ -37,13 +37,15 @@ Edge-ready ONNX model compatible with NXP eIQ and similar frameworks
 **How to Run**
 
 1.Install Dependencies
+
 Make sure Python 3.8+ is installed.
 Install all required packages:
 **pip install -r requirements.txt**
 
 
 2.Prepare Dataset
-Place your dataset ZIP file as: dataset/dataset.zip
+
+Place your dataset ZIP file as: dataset/dataset.zip 
 Extract it to maintain this folder structure:
 final_dataset/dataset/── train/── val/── test/
 Each split contains 9 class folders:
@@ -60,6 +62,7 @@ Saves model as: mobilenet_defect_model.pth.
 
 
 4.Evaluate the Model
+
 Run the evaluation script:
 **python src/evaluate.py**
 Computes Accuracy, Precision, Recall, F1-score.
@@ -68,6 +71,7 @@ Prints detailed classification report.
 
 
 5.Export to ONNX
+
 Run the export script:
 **python src/export_onnx.py**
 Saves ONNX model at: model/defect_classifier.onnx
@@ -75,6 +79,7 @@ Ready for edge deployment (e.g., NXP eIQ).
 
 
 6.Run Inference on a Single Image
+
 Update image_path in src/inference.py to your image.
 Run: **python src/inference.py**
 Outputs predicted defect class.
