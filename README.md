@@ -11,8 +11,11 @@ The goal of this project is to design and develop an Edge-AI capable defect clas
 **Dataset Overview**
 
 Source: Semiconductor wafer/die inspection images
+
 Total images: 1000+ (Clean + Defective)
+
 Classes: clean, other, particle/contamination, scratch, opens, cracks, cmp, vias, bridges
+
 Train / Validation / Test split: 70% / 15% / 15%
 
 **Innovation Highlights**
@@ -90,8 +93,11 @@ Update image_path in src/inference.py to your image.
 **Team Members**
 
 Roshni K
+
 Reevasri S
+
 Kanimozhi S
+
 Srri Lakshmi M R
 
 
