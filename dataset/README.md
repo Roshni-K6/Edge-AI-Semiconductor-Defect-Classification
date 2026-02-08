@@ -4,9 +4,9 @@
 https://drive.google.com/file/d/1krg_vpDR0EoZHPNWtp0VPrj425JXW57d/view?usp=sharing
 
 
-***Dataset Details***
+***Dataset Details:***
 
-Total images (current): ~1,200 images
+Total images (current): 1,200+ images
 
 Number of classes: 9 classes (7 defect classes + Clean + Other)
 
