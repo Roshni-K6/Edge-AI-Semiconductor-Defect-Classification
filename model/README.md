@@ -2,11 +2,14 @@
 
 The trained defect classification model used in this project is provided in ONNX format for easy deployment and cross-platform inference.
 
+
 ***🔗 ONNX Model Download***
 
 https://drive.google.com/file/d/12Pi88YtciSbqGKFJ_QCWeCkzd6X7Go-F/view?usp=drivesdk
 
+
 ***Model Details***
+
 Architecture: MobileNetV2
 
 Training Approach: Transfer Learning 
