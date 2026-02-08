@@ -59,9 +59,9 @@ They must be downloaded separately using the links below.
 
 **1. Clone the Repository**
 
-git clone https://github.com/<your-username>/<your-repo-name>.git
+git clone https://github.com/Roshni-K6/Edge-AI-Semiconductor-Defect-Classification.git
 
-cd <your-repo-name>
+cd Edge-AI-Semiconductor-Defect-Classification
 
 **2. Install Requirements**
 
