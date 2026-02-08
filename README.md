@@ -1,105 +1,131 @@
 # Edge-AI-Semiconductor-Defect-Classification
+***Overview***
 
-**Background**
+This project implements an edge-optimized image classification system to identify semiconductor wafer defects using a MobileNetV2 deep learning model. The solution is designed with edge deployment constraints in mind (low model size, fast inference) and exported to ONNX for compatibility with NXP eIQ / ONNX Runtime.
+The model classifies inspection images into multiple defect categories, along with Clean and Other, enabling automated quality control in semiconductor manufacturing.
 
-Semiconductor fabrication involves hundreds of precise steps, where even microscopic defects can reduce yield or cause failures. Modern fabs generate massive volumes of inspection images using optical microscopes, SEM, AFM, and defect review stations. Traditional centralized/manual inspection struggles with high latency, expensive infrastructure, bandwidth bottlenecks, and difficulty scaling to real-time throughput. This project implements an Edge-AI solution to detect and classify wafer defects with high accuracy, low model size, and real-time performance, enabling on-device inspection and portability for Industry 4.0 manufacturing workflows.
+***Key Features***
 
-**Project Objective**
+-Lightweight MobileNetV2 architecture
 
-The goal of this project is to design and develop an Edge-AI capable defect classification system for semiconductor wafer and die inspection. The system aims to automatically detect and classify defects into predefined categories while maintaining high accuracy and a low model size suitable for deployment on edge devices. Additionally, it is designed to support real-time inspection workflows and to be portable across edge deployment frameworks such as NXP eIQ, enabling efficient on-device analysis without relying on cloud infrastructure.
+-Transfer learning using PyTorch
 
-**Dataset Overview**
+-Optimized ONNX model (~8.5 MB)
 
-Source: Semiconductor wafer/die inspection images
+-High accuracy on test data
 
-Total images: 1000+ (Clean + Defective)
+-Modular, clean codebase
 
-Classes: clean, other, particle/contamination, scratch, opens, cracks, cmp, vias, bridges
+-Dataset and model shared via Google Drive (GitHub-friendly)
+
+***Model Summary***
+
+| Item               | Value              |
+| ------------------ | ------------------ |
+| Architecture       | MobileNetV2        |
+| Training Approach  | Transfer Learning  |
+| Framework          | PyTorch            |
+| Export Format      | ONNX               |
+| Input Size         | 224 × 224 × 3      |
+| Model Size         | ~8.53 MB           |
+| Accuracy           | **96.74%**         |
+| Precision / Recall | **0.97 / 0.97**    |
+| Target             | Edge AI Deployment |
+
+🔗 Model link: see model/README.md
+
+***Dataset Summary***
+
+Total images (current): 1,200+ images
+
+Number of classes: 9 classes (7 defect classes + Clean + Other)
+
+Class list: clean, other, particle/contamination, scratch, opens, cracks, cmp, vias, bridges
+
+Class balance plan: Minimum ~120 images per class to maintain balanced learning and avoid bias toward dominant defect types.
 
 Train / Validation / Test split: 70% / 15% / 15%
 
-**Innovation Highlights**
+Image type: Grayscale images (converted to 3-channel format for CNN compatibility)
 
-Transfer learning reduces training time and improves accuracy with limited data.
+Labeling method / source: Manually curated and labeled from publicly available semiconductor defect images sourced from research publications and open references. Data augmentation was applied to increase sample count while preserving defect characteristics.
 
-Grayscale conversion optional to reduce compute and memory footprint.
+📂 Dataset link: see dataset/README.md
 
-Edge-ready ONNX model compatible with NXP eIQ and similar frameworks.
+***How to Run***
 
-**Evaluation Metrics**
+This repository does not contain the dataset and trained model because of GitHub size limits.
+They must be downloaded separately using the links below.
 
-| Metric           | Value                               |
-| ---------------- | ----------------------------------- |
-| Accuracy         | 98.91%                              |
-| Precision        | 0.99(macro avg)                     |
-| Recall           | 0.99(macro avg)                     |
-| F1 Score         | 0.99(macro avg)                     |
-| Model Size       | 8.2 MB                              |
-| Algorithm        | MobileNetV2 (Transfer Learning      |
-|Training Platform | PyTorch                             |
-| Confusion Matrix | See '/results/confusion_matrix.png' |
+**1. Clone the Repository**
 
-**How to Run**
+git clone https://github.com/<your-username>/<your-repo-name>.git
 
-1.Install Dependencies
+cd <your-repo-name>
+
+**2. Install Requirements**
 
 Make sure Python 3.8+ is installed.
-  Install all required packages:
-  **pip install -r requirements.txt**
 
+pip install -r requirements.txt
 
-2.Prepare Dataset
+**3. Download the Dataset**
 
-Place your dataset ZIP file as: dataset/dataset.zip .
- Extract it to maintain this folder structure:
- final_dataset/dataset/── train/── val/── test/.
- Each split contains 9 class folders:
- clean, other, particle, scratch, opens, cracks, cmp, vias, bridges
+Download the dataset ZIP from dataset/README.md
 
+👉 Dataset link: https://drive.google.com/file/d/1krg_vpDR0EoZHPNWtp0VPrj425JXW57d/view?usp=sharing
 
-3.Train the Model
+Place the file here: dataset/final_dataset.zip and Extract it
 
-Run the training script:
-**python src/train.py**.
- MobileNetV2 is used with transfer learning.
-Trains for 10 epochs (adjustable in train.py).
- Saves model as: mobilenet_defect_model.pth.
+Each folder contains these classes:
 
+clean, other, particle, scratch, opens, cracks, cmp, vias, bridges
 
-4.Evaluate the Model
+**4. Download the Trained ONNX Model**
 
-Run the evaluation script:
-**python src/evaluate.py**.
- Computes Accuracy, Precision, Recall, F1-score.
- Generates confusion matrix saved at: results/confusion_matrix.png.
- Prints detailed classification report.
+👉 ONNX model link: https://drive.google.com/file/d/12Pi88YtciSbqGKFJ_QCWeCkzd6X7Go-F/view?usp=drivesdk
 
+Place it here: models/mobilenet_defect_model.onnx
 
-5.Export to ONNX
+**5. Train the Model (Optional)**
 
-Run the export script:
-**python src/export_onnx.py**. 
- Saves ONNX model at: model/defect_classifier.onnx.
- Ready for edge deployment (e.g., NXP eIQ).
+Run this only if you want to train the model yourself: python src/train.py
 
+Output: models/mobilenet_defect_model.pth
 
-6.Run Inference on a Single Image
+**6. Evaluate the Model**
 
-Update image_path in src/inference.py to your image.
- Run: **python src/inference.py**.
- Outputs predicted defect class.
+python src/evaluate.py
 
+Outputs: results/confusion_matrix.png
+results/metrics.txt
 
-**Team Members**
+**7. Export Model to ONNX**
 
-Roshni K
+python src/export_onnx.py
 
-Reevasri S
+Output: models/mobilenet_defect.onnx
 
-Kanimozhi S
+**8. Run Inference on One Image**
 
-Srri Lakshmi M R
+Open src/inference_onnx.py
 
+Set image path: image_path = "path/to/image.png"
 
+Run: python src/inference_onnx.py
 
+Output: Predicted defect class printed in the terminal
 
+***Results***
+
+Accuracy: 96.74%
+
+Precision / Recall: 0.97 / 0.97
+
+Confusion Matrix: see results/confusion_matrix.jpeg
+
+Model Size: ~8.5 MB (edge-ready)
+
+***Team Members***
+
+Roshni K | Reevasri S | Kanimozhi S | Srri Lakshmi M R
