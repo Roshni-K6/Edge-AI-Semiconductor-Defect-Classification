@@ -1,11 +1,29 @@
-Epoch [1/10] Loss: 0.6276, Accuracy: 82.44%
-Epoch [2/10] Loss: 0.2610, Accuracy: 92.13%
-Epoch [3/10] Loss: 0.1430, Accuracy: 96.24%
-Epoch [4/10] Loss: 0.1328, Accuracy: 96.12%
-Epoch [5/10] Loss: 0.1100, Accuracy: 97.15%
-Epoch [6/10] Loss: 0.1067, Accuracy: 96.69%
-Epoch [7/10] Loss: 0.0752, Accuracy: 97.95%
-Epoch [8/10] Loss: 0.0315, Accuracy: 99.20%
-Epoch [9/10] Loss: 0.0817, Accuracy: 97.38%
-Epoch [10/10] Loss: 0.0483, Accuracy: 98.75%
+Validation Accuracy: 98.37%
 
+Confusion Matrix:
+[[23  0  0  0  0  0  0  0  0]
+ [ 2  9  0  0  0  0  0  0  0]
+ [ 0  0 24  0  0  0  0  0  0]
+ [ 0  0  0 23  0  0  0  0  0]
+ [ 0  0  0  0 23  0  0  0  0]
+ [ 0  0  0  0  0 12  0  0  0]
+ [ 0  0  1  0  0  0 21  0  0]
+ [ 0  0  0  0  0  0  0 23  0]
+ [ 0  0  0  0  0  0  0  0 23]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+      bridge       0.92      1.00      0.96        23
+       clean       1.00      0.82      0.90        11
+         cmp       0.96      1.00      0.98        24
+       crack       1.00      1.00      1.00        23
+       opens       1.00      1.00      1.00        23
+       other       1.00      1.00      1.00        12
+    particle       1.00      0.95      0.98        22
+     scratch       1.00      1.00      1.00        23
+        vias       1.00      1.00      1.00        23
+
+    accuracy                           0.98       184
+   macro avg       0.99      0.97      0.98       184
+weighted avg       0.98      0.98      0.98       184
