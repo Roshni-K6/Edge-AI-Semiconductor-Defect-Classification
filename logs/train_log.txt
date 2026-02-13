@@ -1,12 +1,10 @@
-Using device: cpu
-Epoch [1/10] Loss: 0.5695, Accuracy: 83.35%
-Epoch [2/10] Loss: 0.3023, Accuracy: 92.36%
-Epoch [3/10] Loss: 0.1242, Accuracy: 96.01%
-Epoch [4/10] Loss: 0.0986, Accuracy: 97.15%
-Epoch [5/10] Loss: 0.1196, Accuracy: 96.35%
-Epoch [6/10] Loss: 0.0925, Accuracy: 97.15%
-Epoch [7/10] Loss: 0.0893, Accuracy: 97.61%
-Epoch [8/10] Loss: 0.1401, Accuracy: 96.24%
-Epoch [9/10] Loss: 0.0461, Accuracy: 98.63%
-Epoch [10/10] Loss: 0.0310, Accuracy: 99.20%
-Training completed and model saved.
+Epoch [1/10] Loss: 0.6276, Accuracy: 82.44%
+Epoch [2/10] Loss: 0.2610, Accuracy: 92.13%
+Epoch [3/10] Loss: 0.1430, Accuracy: 96.24%
+Epoch [4/10] Loss: 0.1328, Accuracy: 96.12%
+Epoch [5/10] Loss: 0.1100, Accuracy: 97.15%
+Epoch [6/10] Loss: 0.1067, Accuracy: 96.69%
+Epoch [7/10] Loss: 0.0752, Accuracy: 97.95%
+Epoch [8/10] Loss: 0.0315, Accuracy: 99.20%
+Epoch [9/10] Loss: 0.0817, Accuracy: 97.38%
+Epoch [10/10] Loss: 0.0483, Accuracy: 98.75%
