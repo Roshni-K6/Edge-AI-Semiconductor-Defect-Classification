@@ -1,0 +1,11 @@
+Task 2 Final Results
+
+Training Epochs: 10
+Final Training Loss: 0.3063
+
+Validation Accuracy: 65.35%
+Test Accuracy: 54%
+
+Macro Precision: 0.57
+Macro Recall: 0.54
+Macro F1-score: 0.53
